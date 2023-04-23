@@ -1,12 +1,12 @@
-import { Block } from "../types/block.js";
-import { Transaction } from "../types/transaction.js";
-import { Validator } from "../types/validator.js";
-import { calcBlockHash } from "./calcBlockHash.js";
+import { Block } from "../types/block.ts";
+import { Tx } from "../types/tx.ts";
+import { Validator } from "../types/validator.ts";
+import { calcBlockHash } from "./calcBlockHash.ts";
 
 // 新しいブロックを作る
 export async function createBlock(
   prevBlock: Block,
-  transaction: Transaction,
+  tx: Tx,
   validator: Validator,
 ): Promise<Block> {
   // 現在時刻
@@ -18,16 +18,16 @@ export async function createBlock(
     index,
     time,
     prevBlock.hash,
-    transaction,
+    tx,
     validator,
   );
   // 新しいブロック
   const newBlock: Block = {
     index: index,
-    time_stamp: time,
+    time: time,
     prev_hash: prevBlock.hash,
     hash: hash,
-    transaction: transaction,
+    tx: tx,
     validator: validator,
   };
 

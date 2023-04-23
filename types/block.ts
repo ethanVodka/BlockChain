@@ -1,17 +1,18 @@
-import { Transaction } from "./transaction";
-import { Validator } from "./validator";
+import { Tx } from "./tx.ts";
+import { Validator } from "./validator.ts";
 
+// ブロック
 export type Block = {
-    //ブロックインデクス
-    index: number;
-    //ブロック生成日時
-    time_stamp: string;
-    //ひとつ前のブロックのハッシュ
-    prev_hash: string;
-    //このブロックのハッシュ
-    hash: string;
-    //トランザクション
-    transaction: Transaction;
-    //バリデータ-
-    validator: Validator;
+  // 何番目のブロックか
+  index: number;
+  // ブロックを作った 時刻
+  time: string;
+  // 1つ前のブロック の ハッシュ
+  prev_hash: string;
+  // このブロック の ハッシュ
+  hash: string;
+  // トランザクション (ブロックの中に閉じ込めておくデータ)
+  tx: Tx;
+  // このブロックを保証してくれるバリデーター
+  validator: Validator;
 };

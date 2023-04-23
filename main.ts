@@ -1,14 +1,14 @@
-import { createTransaction } from "./functions/createTransaction.js";
-import { pickWinner } from "./functions/pickWinner.js";
-import { Block } from "./types/block.js";
-import { createBlock } from "./functions/createBlock.js";
+import { createTx } from "./functions/createTx.ts";
+import { pickWinner } from "./functions/pickWinner.ts";
+import { Block } from "./types/block.ts";
+import { createBlock } from "./functions/createBlock.ts";
 
 // メイン関数を実行
 main();
 
 async function main() {
   // tx を用意する
-  const tx = createTransaction();
+  const tx = createTx();
 
   // くじ引きでバリデーターを選ぶ
   const validator = pickWinner();

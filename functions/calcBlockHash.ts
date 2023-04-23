@@ -1,5 +1,5 @@
-import { Transaction } from "../types/transaction.js";
-import { Validator } from "../types/validator.js";
+import { Tx } from "../types/tx.ts";
+import { Validator } from "../types/validator.ts";
 
 /// Hash (SHA256)
 export async function hash(str: string): Promise<string> {
@@ -11,18 +11,18 @@ export async function hash(str: string): Promise<string> {
 
 // ブロックのハッシュを計算する
 export async function calcBlockHash(
-    index: number,
-    time: string,
-    prev_hash: string,
-    transaction: Transaction,
-    validator: Validator,
-  ): Promise<string> {
-    // ブロックの中身を文字にして繋げる
-    const str = index.toString() +
-      time +
-      prev_hash +
-      JSON.stringify(transaction) +
-      JSON.stringify(validator);
-  
-    return await hash(str);
-  }
+  index: number,
+  time: string,
+  prev_hash: string,
+  tx: Tx,
+  validator: Validator,
+): Promise<string> {
+  // ブロックの中身を文字にして繋げる
+  const str = index.toString() +
+    time +
+    prev_hash +
+    JSON.stringify(tx) +
+    JSON.stringify(validator);
+
+  return await hash(str);
+}

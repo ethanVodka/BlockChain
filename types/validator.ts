@@ -1,5 +1,9 @@
+// ブロックをチェックするバリデーター
 export type Validator = {
-    addr: string;
-    signature: string;
-    token: number;
-}
+  // アドレス
+  addr: string;
+  // サイン (署名)
+  signature: string;
+  // 賭け金
+  token: number;
+};
