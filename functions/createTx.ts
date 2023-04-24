@@ -12,14 +12,14 @@ export function createTx(): Tx {
   const inputs: Input[] = [
     {
       time: now,
-      from: "TaroWallet",
+      from: "FurkatWallet",
       signature: "Im Ethan, agree",
     },
   ];
   // アウトプット
   const outputs: Output[] = [
     {
-      to: "HanakoWallet",
+      to: "HasanWallet",
       amount: 20,
       fee: 3,
     },

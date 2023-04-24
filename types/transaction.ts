@@ -1,9 +1,9 @@
-import { Input } from "./input";
-import { Output } from "./output";
+import { Input } from "./input.ts";
+import { Output } from "./output.ts";
 
 //トランアクション
 export type Transaction = {
-    id: string;
-    inputs: Input[];
-    outputs: Output[];
+  id: string;
+  inputs: Input[];
+  outputs: Output[];
 };
